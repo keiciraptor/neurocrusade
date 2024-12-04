@@ -36,6 +36,7 @@ public class mainmenu implements MouseListener{
         
         frame = new JFrame("NeuroCrusade");
         
+        
         gamebgIcon = new ImageIcon("Images/mainmenu.png");
         
         playIcon = new ImageIcon("Images/play.png");
@@ -58,6 +59,8 @@ public class mainmenu implements MouseListener{
         img = new ImageIcon(musicIcon.getImage().getScaledInstance(207,64,Image.SCALE_DEFAULT));
         music = new JLabel(img);
         
+        frame.setContentPane(new JLabel(gamebgIcon));
+        
     }
     
     public void setFrame()
@@ -66,6 +69,8 @@ public class mainmenu implements MouseListener{
         frame.add(play, new Rectangle(2,10,5,2));
         frame.add(mech, new Rectangle(2,13,5,2));
         frame.add(credits, new Rectangle(2,16,5,2));
+        frame.add(settings, new Rectangle(14,1,2,2));
+        frame.add(music, new Rectangle(16,1,2,2));
         
         frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
