@@ -19,13 +19,15 @@ public class mainmenu implements MouseListener{
     JLabel play;
     ImageIcon newplayIcon;
     JLabel mechanics;
-    ImageIcon newmechanicsIcon;
+    ImageIcon mechanicsIcon;
     JLabel credits;
-    ImageIcon newcreditsIcon;
+    ImageIcon creditsIcon;
     JLabel settings; 
     ImageIcon settingsIcon;
     JLabel music;
     ImageIcon musicIcon;
+    ImageIcon gamebgIcon;
+    ImageIcon img;
     //place all other elements in the background too, yuh
     //PlaySound click;
     public mainmenu()
@@ -34,6 +36,18 @@ public class mainmenu implements MouseListener{
         
         frame = new JFrame("NeuroCrusade");
         
+        gamebgIcon = new ImageIcon("Images/mainmenu.png");
+        //set
+        newplayIcon = new ImageIcon("Images/newplay.png");
+        //set
+        mechanicsIcon = new ImageIcon("Images/mech.png");
+        //set
+        creditsIcon = new ImageIcon("Images/creds.png");
+        //set
+        settingsIcon = new ImageIcon("Images/settings.png");
+        //set
+        musicIcon = new ImageIcon("Images/music.png");
+        //set
         
     }
     
