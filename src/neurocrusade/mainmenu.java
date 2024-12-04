@@ -57,3 +57,50 @@ public class mainmenu implements MouseListener{
        
     }
 }
+
+ @Override
+    public void mousePressed(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        if (e.getSource() == newmechanicsIcon){
+            frame.dispose();
+            mechanics la = new mechanics();
+            la.setFrame();
+        }
+        
+        else if (e.getSource() == newcreditsIcon){
+            frame.dispose();
+            credits cl = credits();
+            cl.setFrame();
+        }
+        
+        else if (e.getSource() == newplayIcon){
+            frame.dispose();
+            play ng = play();
+            ng.setFrame();
+        }
+        
+        else if (e.getSource() == settingsIcon){
+            settings st = settings();
+            st.setFrame();
+        }
+        
+        else if (e.getSource() == musicIcon){
+            click.mute(true);
+        }
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    }
+}
