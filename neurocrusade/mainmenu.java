@@ -14,17 +14,32 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class mainmenu implements ActionListener{
+public class mainmenu implements MouseListener{
     JFrame frame;
-    JButton play;
-    JButton mechanics;
-    JButton credits;
-    
+    JLabel play;
+    ImageIcon newplayIcon;
+    JLabel mechanics;
+    ImageIcon newmechanicsIcon;
+    JLabel credits;
+    ImageIcon newcreditsIcon;
+    JLabel settings; 
+    ImageIcon settingsIcon;
+    JLabel music;
+    ImageIcon musicIcon;
+    //place all other elements in the background too, yuh
+    //PlaySound click;
     public mainmenu()
     {
+        //click = newPlaySound();
+        
         frame = new JFrame("NeuroCrusade");
-        play = new JButton("Play");
-        mechanics = new JButton("Mechanics");
-        credits = new JButton("Credits");
+        
+        
+    }
+    
+    public void setFrame()
+    {
+        frame.setLayout(new GraphPaperLayout(new Dimension(27,18)));
+       
     }
 }
