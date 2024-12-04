@@ -18,7 +18,7 @@ public class mainmenu implements MouseListener{
     JFrame frame;
     JLabel play;
     ImageIcon playIcon;
-    JLabel mechanics;
+    JLabel mech;
     ImageIcon mechanicsIcon;
     JLabel credits;
     ImageIcon creditsIcon;
@@ -37,28 +37,71 @@ public class mainmenu implements MouseListener{
         frame = new JFrame("NeuroCrusade");
         
         gamebgIcon = new ImageIcon("Images/mainmenu.png");
-        //set
+        
         playIcon = new ImageIcon("Images/play.png");
-        //set
+        img = new ImageIcon(playIcon.getImage().getScaledInstance(207,64,Image.SCALE_DEFAULT));
+        play = new JLabel(img);
+        
         mechanicsIcon = new ImageIcon("Images/mech.png");
-        //set
+        img = new ImageIcon(mechanicsIcon.getImage().getScaledInstance(207,64,Image.SCALE_DEFAULT));
+        mech = new JLabel(img);
+        
         creditsIcon = new ImageIcon("Images/creds.png");
-        //set
+        img = new ImageIcon(creditsIcon.getImage().getScaledInstance(207,64,Image.SCALE_DEFAULT));
+        credits = new JLabel(img);
+        
         settingsIcon = new ImageIcon("Images/settings.png");
-        //set
+        img = new ImageIcon(settingsIcon.getImage().getScaledInstance(207,64,Image.SCALE_DEFAULT));
+        settings = new JLabel(img);
+        
         musicIcon = new ImageIcon("Images/music.png");
-        //set
+        img = new ImageIcon(musicIcon.getImage().getScaledInstance(207,64,Image.SCALE_DEFAULT));
+        music = new JLabel(img);
         
     }
     
     public void setFrame()
     {
-        frame.setLayout(new GraphPaperLayout(new Dimension(27,18)));
-       
+        frame.setLayout(new GraphPaperLayout(new Dimension(24,18)));
+        frame.add(play, new Rectangle(2,10,5,2));
+        frame.add(mech, new Rectangle(2,13,5,2));
+        frame.add(credits, new Rectangle(2,16,5,2));
+        
+        frame.setDefaultCloseOperation(frame.DISPOSE_ON_CLOSE);
+        frame.setVisible(true);
+        frame.setSize(782,695);
+        
+        play.addMouseListener(this);
     }
-}
+    public static void main(String[] args) {
+        mainmenu mm = new mainmenu();
+        mm.setFrame();
+    }
 
- @Override
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if(e.getSource()==play)
+        {
+            game g = new game();
+            g.setFrame();
+            frame.dispose();
+        }
+        else if(e.getSource()==credits)
+        {
+            credits c = new credits();
+            c.setFrame();
+            frame.dispose();
+        }
+        else if(e.getSource()==mech)
+        {
+            mech m = new mech();
+            m.setFrame();
+            frame.dispose();
+        }
+        
+    }
+
+    @Override
     public void mousePressed(MouseEvent e) {
     }
 
@@ -68,39 +111,10 @@ public class mainmenu implements MouseListener{
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        if (e.getSource() == newmechanicsIcon){
-            frame.dispose();
-            mechanics la = new mechanics();
-            la.setFrame();
-        }
-        
-        else if (e.getSource() == newcreditsIcon){
-            frame.dispose();
-            credits cl = credits();
-            cl.setFrame();
-        }
-        
-        else if (e.getSource() == newplayIcon){
-            frame.dispose();
-            play ng = play();
-            ng.setFrame();
-        }
-        
-        else if (e.getSource() == settingsIcon){
-            settings st = settings();
-            st.setFrame();
-        }
-        
-        else if (e.getSource() == musicIcon){
-            click.mute(true);
-        }
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
     }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-    }
+    
 }
